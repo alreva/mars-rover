@@ -9,7 +9,7 @@ public class BuilderOrErrors<TBuidlder>
 
     public List<Error> Errors { get; set; }
     
-    public TBuidlder Builder { get; set; }
+    public TBuidlder? Builder { get; set; }
     
     public bool HasErrors => Errors.Any();
     
