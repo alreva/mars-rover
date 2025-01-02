@@ -7,10 +7,11 @@ public class Plateau(int width, int height, List<Message> log)
     
     List<Message> Log { get; } = log;
 
-    public Plateau AddRover(Position position, Instruction[] instructions)
+    public Rover AddRover(Position position, Instruction[] instructions)
     {
+        var rover = new Rover(this, position, instructions, Log);
         Rovers.Add(new Rover(this, position, instructions, Log));
-        return this;
+        return rover;
     }
 
     public List<Rover> Rovers { get; set; } = [];

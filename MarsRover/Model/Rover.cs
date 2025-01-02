@@ -117,6 +117,16 @@ public class Rover
 
         List<Error> errors = [];
         
+        if (nextPositionCandidate.Coordinates.X < 0)
+        {
+            errors.Add("Rover cannot move outside the plateau's width.");
+        }
+        
+        if (nextPositionCandidate.Coordinates.Y < 0)
+        {
+            errors.Add("Rover cannot move outside the plateau's height.");
+        }
+        
         if (Plateau.Width < nextPositionCandidate.Coordinates.X)
         {
             errors.Add("Rover cannot move outside the plateau's width.");
@@ -136,6 +146,9 @@ public class Rover
     {
         var (position, errors, _) = GetNextPosition();
         
+        // Advance the instruction index anyway, even if the rover is blocked by the plateau boundary
+        CurrentInstructionIndex++;
+        
         if (errors.Length > 0)
         {
             foreach (var error in errors)
@@ -146,7 +159,6 @@ public class Rover
         }
 
         Position = position;
-        CurrentInstructionIndex++;
         return true;
     }
 

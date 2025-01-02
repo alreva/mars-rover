@@ -18,14 +18,17 @@ public class RoverCommandSequenceBuilder(RoverBuilder roverBuilder, List<Message
     private Plateau WithInstructions(params IEnumerable<Instruction> commands)
     {
         Commands = commands.ToArray();
-        return new Plateau(
-                RoverBuilder.PlateauBuilder.Width,
-                RoverBuilder.PlateauBuilder.Height,
-                log)
+        var plateau = new Plateau(
+            RoverBuilder.PlateauBuilder.Width,
+            RoverBuilder.PlateauBuilder.Height,
+            log);
+
+        plateau
             .AddRover(
                 new Position(new Coordinates(RoverBuilder.X, RoverBuilder.Y), RoverBuilder.Direction),
-                Commands!
-            );
+                Commands!);
+
+        return plateau;
     }
 
     private static List<Error> ParseAndValidateInput(string input, out List<Instruction> instructions)
