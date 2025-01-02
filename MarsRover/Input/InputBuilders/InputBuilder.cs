@@ -1,6 +1,6 @@
 namespace MarsRover.Input.InputBuilders;
 
-public class InputBuilder
+public static class InputBuilder
 {
-    public static PlateauBuilder Plateau(List<Message> log) => new PlateauBuilder(log);
+    public static PlateauBuilder Plateau(List<Message> log) => new(log);
 }

@@ -5,6 +5,14 @@ namespace MarsRover.Input.InputBuilders;
 public class RoverBuilder(PlateauBuilder plateauBuilder, List<Message> log)
 {
     public PlateauBuilder PlateauBuilder { get; } = plateauBuilder;
+
+    public RoverCommandSequenceBuilder WithRover(int x, int y, Direction direction)
+    {
+        X = x;
+        Y = y;
+        Direction = direction;
+        return new RoverCommandSequenceBuilder(this, log);
+    }
     
     public BuilderOrErrors<RoverCommandSequenceBuilder?> WithRover(string input)
     {
@@ -63,14 +71,6 @@ public class RoverBuilder(PlateauBuilder plateauBuilder, List<Message> log)
         }
         
         return errors;
-    }
-
-    public RoverCommandSequenceBuilder WithRover(int x, int y, Direction direction)
-    {
-        X = x;
-        Y = y;
-        Direction = direction;
-        return new RoverCommandSequenceBuilder(this, log);
     }
 
     public Direction Direction { get; set; }

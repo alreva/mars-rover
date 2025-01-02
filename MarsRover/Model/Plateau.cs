@@ -29,13 +29,15 @@ public class Plateau(int width, int height, List<Message> log)
             LogInfo("All rovers have no moves remaining. Simulation cannot run.");
             return;
         }
-        
-        for (var currentTick = 0; Rovers.Any(r => r.HasMovesRemaining); currentTick++)
+
+        var currentTick = 0;
+        while (Rovers.Any(r => r.HasMovesRemaining))
         {
             LogInfo($"Starting tick {currentTick}");
             var roversWithStateChanges = ExecuteNextTick();
             if (roversWithStateChanges.Count != 0)
             {
+                currentTick++;
                 continue;
             }
             
