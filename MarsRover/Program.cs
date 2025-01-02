@@ -1,4 +1,5 @@
 ﻿using MarsRover.Input;
+using MarsRover.Input.Console;
 
 var console = new ConsoleAdapter();
 RoverConsoleUi roverConsoleUi = new(console);

@@ -1,4 +1,5 @@
 using MarsRover.Input;
+using MarsRover.Input.Console;
 
 namespace MarsRover.Tests.TestArtifacts;
 

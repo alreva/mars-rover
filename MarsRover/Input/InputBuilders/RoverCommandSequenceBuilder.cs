@@ -1,4 +1,4 @@
-namespace MarsRover.Input;
+namespace MarsRover.Input.InputBuilders;
 
 public class RoverCommandSequenceBuilder(RoverBuilder roverBuilder, List<Message> log)
 {

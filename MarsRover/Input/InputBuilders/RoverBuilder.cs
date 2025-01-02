@@ -1,4 +1,4 @@
-namespace MarsRover.Input;
+namespace MarsRover.Input.InputBuilders;
 
 public class RoverBuilder(PlateauBuilder plateauBuilder, List<Message> log)
 {
