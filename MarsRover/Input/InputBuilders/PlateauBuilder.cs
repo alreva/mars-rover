@@ -11,7 +11,7 @@ public class PlateauBuilder(List<Message> log)
             : WithDimensions(width, height);
     }
 
-    private RoverBuilder WithDimensions(int width, int height)
+    public RoverBuilder WithDimensions(int width, int height)
     {
         Width = width;
         Height = height;

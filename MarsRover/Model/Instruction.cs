@@ -1,4 +1,4 @@
-namespace MarsRover;
+namespace MarsRover.Model;
 
 public enum Instruction
 {

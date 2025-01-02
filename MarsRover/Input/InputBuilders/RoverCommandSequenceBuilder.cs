@@ -1,3 +1,5 @@
+using MarsRover.Model;
+
 namespace MarsRover.Input.InputBuilders;
 
 public class RoverCommandSequenceBuilder(RoverBuilder roverBuilder, List<Message> log)

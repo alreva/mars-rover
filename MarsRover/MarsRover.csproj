@@ -9,8 +9,4 @@
         <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
     </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="FluentAssertions" Version="7.0.0" />
-    </ItemGroup>
-
 </Project>

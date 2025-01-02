@@ -1,3 +1,5 @@
+using MarsRover.Model;
+
 namespace MarsRover.Input.InputBuilders;
 
 public class RoverBuilder(PlateauBuilder plateauBuilder, List<Message> log)
@@ -63,7 +65,7 @@ public class RoverBuilder(PlateauBuilder plateauBuilder, List<Message> log)
         return errors;
     }
 
-    private RoverCommandSequenceBuilder WithRover(int x, int y, Direction direction)
+    public RoverCommandSequenceBuilder WithRover(int x, int y, Direction direction)
     {
         X = x;
         Y = y;

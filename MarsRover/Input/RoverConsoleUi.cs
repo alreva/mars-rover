@@ -1,6 +1,7 @@
 using MarsRover.Input.Console;
 using MarsRover.Input.InputBuilders;
 using MarsRover.Input.RequestExecutors;
+using MarsRover.Model;
 
 namespace MarsRover.Input;
 
@@ -44,7 +45,14 @@ public class RoverConsoleUi
         _console.WriteLine("Simulation complete. Execution log:");
         foreach (var message in _log)
         {
-            _console.WriteLine(message);
+            if (message is Error error)
+            {
+                _console.WriteLine($"error: {error}");
+            }
+            else
+            {
+                _console.WriteLine(message.ToString());
+            }
         }
 
         _console.WriteLine();

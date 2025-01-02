@@ -1,4 +1,4 @@
-namespace MarsRover;
+namespace MarsRover.Model;
 
 public class Plateau(int width, int height, List<Message> log)
 {

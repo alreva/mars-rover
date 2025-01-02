@@ -1,5 +1,6 @@
 using MarsRover.Input.Console;
 using MarsRover.Input.InputBuilders;
+using MarsRover.Model;
 
 namespace MarsRover.Input.RequestExecutors;
 

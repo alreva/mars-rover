@@ -36,7 +36,7 @@ public abstract class InputRequestExecutor<TBuilder>
         {
             foreach (var error in result.Errors)
             {
-                Console.WriteLine(error);
+                Console.WriteLine($"{error}");
             }
 
             return (RunOneCycleResult.InvalidInput, default);
